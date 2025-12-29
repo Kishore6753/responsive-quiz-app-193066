@@ -1,82 +1,48 @@
-# Lightweight React Template for KAVIA
+# Responsive Quiz App (Frontend-only)
 
-This project provides a minimal React template with a clean, modern UI and minimal dependencies.
+A mobile-first quiz application built with React. All quizzes and attempts are stored in **browser localStorage** (no backend).
 
 ## Features
 
-- **Lightweight**: No heavy UI frameworks - uses only vanilla CSS and React
-- **Modern UI**: Clean, responsive design with KAVIA brand styling
-- **Fast**: Minimal dependencies for quick loading times
-- **Simple**: Easy to understand and modify
+- **Dashboard/Home**
+  - Browse available quizzes (seeded with 3 example quizzes)
+  - See recent attempts and scores
+  - Empty state when no attempts exist
+  - Clear attempts button (localStorage)
 
-## Getting Started
+- **Quiz Taking**
+  - Single-choice and multiple-choice questions
+  - Progress indicator + question navigation
+  - Submit enabled only after all questions are answered
+  - Basic accessibility (labels, keyboard-friendly inputs)
 
-In the project directory, you can run:
+- **Results**
+  - Score summary (correct/total/percent)
+  - Actions: review answers, retry, back to dashboard
 
-### `npm start`
+- **Review**
+  - See each question with:
+    - Correct answer(s)
+    - Your selection(s)
+    - Explanation (when provided)
 
-Runs the app in development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Data Persistence
 
-### `npm test`
+- Quizzes are seeded into localStorage on first load.
+- Attempts are stored with a stable snapshot of quiz questions at the time of completion.
 
-Launches the test runner in interactive watch mode.
+## How to run
 
-### `npm run build`
+From this directory:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-## Customization
-
-### Colors
-
-The main brand colors are defined as CSS variables in `src/App.css`:
-
-```css
-:root {
-  --kavia-orange: #E87A41;
-  --kavia-dark: #1A1A1A;
-  --text-color: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
-}
+```bash
+npm install
+npm start
 ```
 
-### Components
+Open http://localhost:3000
 
-This template uses pure HTML/CSS components instead of a UI framework. You can find component styles in `src/App.css`. 
+## Notes
 
-Common components include:
-- Buttons (`.btn`, `.btn-large`)
-- Container (`.container`)
-- Navigation (`.navbar`)
-- Typography (`.title`, `.subtitle`, `.description`)
-
-## Learn More
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- No external services are used.
+- Theme uses accents: `#3b82f6` (primary) and `#06b6d4` (accent).
